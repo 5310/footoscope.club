@@ -1,0 +1,22 @@
+{
+  "include": ["src", "types"],
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "useDefineForClassFields": true,
+
+    // Snowpack paths
+    "baseUrl": "./",
+    "paths": { "*": ["web_modules/.types/*"] }
+  }
+}
