@@ -66,11 +66,11 @@
   --layout-content-padding: max(var(--f3), calc((100vw - 400px) / 2));
 
   /* Medium Viewport Overrides */
-  @media (1920px > width >= 1024px) {
+  @media (2000px > width >= 1000px) {
     /* base unit */
     font-size: clamp(
       16px,
-      calc(16px + 4 * (100vw - 1024px) / (1920 - 1024)),
+      calc(16px + 4 * (100vw - 1000px) / (2000 - 1000)),
       calc(16px + 4px)
     );
 
@@ -96,13 +96,13 @@
     --layout-truck-width: 50%;
     --layout-content-padding: clamp(
       64px,
-      calc(64px + 96 * (100vw - 1024px) / (1920 - 1024)),
+      calc(64px + 96 * (100vw - 1000px) / (2000 - 1024)),
       calc(64px + 96px)
     );
   }
 
   /* Large Viewport Overrides */
-  @media (width >= 1920px) {
+  @media (width >= 2000px) {
     /* base unit */
     font-size: 24px;
 
@@ -121,7 +121,7 @@
     --type-body-bn-line-height: 1.8em;
 
     /* Layout system */
-    --layout-truck-width: calc(1920px / 2);
+    --layout-truck-width: calc(2000px / 2);
     --layout-content-padding: calc(64px + 96px);
   }
 }
