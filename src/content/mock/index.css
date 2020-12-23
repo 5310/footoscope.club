@@ -85,6 +85,13 @@
     --f5: 4.209rem;
     --f6: 5.61rem;
 
+    /* Type system  */
+    --type-body-bn-line-height: clamp(
+      1.6em,
+      calc(1.6em + 0.1 * (100vw - 1000px) / (2000 - 1000)),
+      calc(1.6em + 0.1)
+    );
+
     /* Layout system */
     --layout-truck-width: 50%;
     --layout-content-padding: clamp(
@@ -109,6 +116,9 @@
     --f4: 4rem;
     --f5: 5.653rem;
     --f6: 8rem;
+
+    /* Type system  */
+    --type-body-bn-line-height: 1.8em;
 
     /* Layout system */
     --layout-truck-width: calc(1920px / 2);
