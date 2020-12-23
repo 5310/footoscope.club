@@ -1,3 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  background: #00000005;
+}
+
 :root {
-  font-family: serif;
+  /* base unit */
+  font-size: 16px;
+
+  /* Small viewport is the default */
+
+  /* Scale */
+  --f-2: 0.64rem;
+  --f-1: 0.8rem;
+  --f0: 1rem;
+  --f1: 1.25rem;
+  --f2: 1.563rem;
+  --f3: 1.953rem;
+  --f4: 2.441rem;
+  --f5: 3.052rem;
+  --f6: 3.815rem;
+
+  /* Type system */
+  --type-headline-bn-line-height: 1em;
+  --type-headline-1-size: var(--f5);
+  --type-headline-1-weight: 500;
+  --type-headline-2-size: var(--f4);
+  --type-headline-2-weight: 600;
+  --type-headline-3-size: var(--f3);
+  --type-headline-3-weight: 700;
+  --type-headline-4-size: var(--f2);
+  --type-headline-4-weight: 700;
+  --type-headline-5-size: var(--f1);
+  --type-headline-5-weight: 700;
+  --type-subheadline-1-size: var(--f2);
+  --type-subheadline-1-weight: 300;
+  --type-subheadline-2-size: var(--f1);
+  --type-subheadline-2-weight: 300;
+  --type-subheadline-3-size: var(--f0);
+  --type-subheadline-3-weight: 300;
+  --type-body-bn-line-height: 1.6em;
+  --type-body-1-size: var(--f1);
+  --type-body-1-weight: 400;
+  --type-body-2-size: var(--f0);
+  --type-body-2-weight: 400;
+  --type-caption-size: var(--f-1);
+  --type-caption-weight: 300;
+  --type-overline-size: var(--f-2);
+  --type-overline-weight: 700;
+
+  /* Type defaults */
+  font-family: 'Hind Siliguri', cursive, serif;
+  line-height: var(--type-body-bn-line-height);
+
+  /* Type mixins */
+  @define-mixin type $name {
+    font-size: var(--type-$(name)-size, 1em);
+    font-weight: var(--type-$(name)-weight, 400);
+  }
+
+  /* Layout system */
+  --layout-truck-width: 100%;
+  --layout-content-padding: max(var(--f3), calc((100vw - 400px) / 2));
+
+  /* Medium Viewport Overrides */
+  @media (1920px > width >= 1024px) {
+    /* base unit */
+    font-size: clamp(
+      16px,
+      calc(16px + 4 * (100vw - 1024px) / (1920 - 1024)),
+      calc(16px + 4px)
+    );
+
+    /* scale */
+    --f-2: 0.6rem;
+    --f-1: 0.75rem;
+    --f0: 1rem;
+    --f1: 1.333rem;
+    --f2: 1.777rem;
+    --f3: 2.369rem;
+    --f4: 3.157rem;
+    --f5: 4.209rem;
+    --f6: 5.61rem;
+
+    /* Layout system */
+    --layout-truck-width: 50%;
+    --layout-content-padding: clamp(
+      64px,
+      calc(64px + 96 * (100vw - 1024px) / (1920 - 1024)),
+      calc(64px + 96px)
+    );
+  }
+
+  /* Large Viewport Overrides */
+  @media (width >= 1920px) {
+    /* base unit */
+    font-size: 24px;
+
+    /* Scale */
+    --f-2: 0.7rem;
+    --f-1: 0.8rem;
+    --f0: 1rem;
+    --f1: 1.414rem;
+    --f2: 2rem;
+    --f3: 2.827rem;
+    --f4: 4rem;
+    --f5: 5.653rem;
+    --f6: 8rem;
+
+    /* Layout system */
+    --layout-truck-width: calc(1920px / 2);
+    --layout-content-padding: calc(64px + 96px);
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+
+  hgroup,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  blockquote,
+  figcaption {
+    text-align: center;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--type-headline-bn-line-height);
+}
+
+h1 {
+  @mixin type headline-3;
+}
+
+h2 {
+  @mixin type headline-4;
+}
+
+h3 {
+  @mixin type headline-5;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+figcaption {
+  @mixin type caption;
+}
+
+hr {
+  border-width: 1px 0;
+  width: 25%;
+  align-self: center;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @mixin type body-2;
+}
+
+/* Page specific styles */
+body {
+  & > main {
+    width: var(--layout-truck-width);
+    flex-grow: 1;
+    margin: var(--f6) 0;
+
+    & > article {
+      & > * {
+        padding: 0 var(--layout-content-padding);
+      }
+
+      .cover {
+        padding: 0;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      & > hgroup {
+        margin: var(--f6) 0;
+        opacity: 80%;
+
+        h1 {
+          @mixin type headline-2;
+        }
+
+        h3 {
+          @mixin type subheadline-3;
+          &::before,
+          &::after {
+            content: '—';
+            margin: 0 0.5ch;
+          }
+        }
+      }
+    }
+  }
+
+  & > footer {
+    width: var(--layout-truck-width);
+    padding: var(--f2);
+    @mixin type caption;
+    text-align: center;
+  }
 }
