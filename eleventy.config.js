@@ -1,4 +1,8 @@
+const yaml = require('js-yaml')
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addDataExtension('yaml', (contents) => yaml.safeLoad(contents))
+
   eleventyConfig.setTemplateFormats([
     // Templates:
     'njk',
