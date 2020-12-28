@@ -1,0 +1,22 @@
+---
+layout: base/index.njk
+---
+<main class="story">
+  <article>
+      <figure class="cover">
+        <img src="{{ story.cover.src }}" alt="{{ story.cover.caption }}" />
+      </figure>
+      <hgroup class="attribution">
+        <h1 class="title">{{ story.title }}</h1>
+        <h3 class="author">লেখকঃ
+          {% for author in story.authors %}
+            <span>{{ author }}</span>
+          {% else %}
+            Anonymous
+          {% endfor %}
+        </h1>
+      </hgroup>
+      {{ content | safe }}
+  </article>
+  <aside class="decor"></aside>
+</main>

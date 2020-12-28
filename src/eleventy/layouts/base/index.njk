@@ -8,10 +8,15 @@
 
     <title>{{ pageTitle or global.name }}</title>
 
-    <link rel="stylesheet" type="text/css" href="layouts/base/index.css" />
+    <link rel="stylesheet" type="text/css" href="/layouts/base/index.css" />
+    {% block head %}
+    {% endblock %}
   </head>
 
   <body>
+    <header></header>
     {{ content | safe }}
+    <hr />
+    <footer>আয় তোর মুন্ডুটা দেখি! · CC-BY-NC</footer>
   </body>
 </html>

@@ -1,8 +1,6 @@
 ---
-layout: base/index.njk
-pageTitle: Mockup
+layout: home/index.njk
+pageTitle: Welcome to Footoscope!
+featured:
+  - 'hjbrl/peristan'
 ---
-
-# Welcome to {{ global.name }}
-
-This is test content. This live updates while you type!
