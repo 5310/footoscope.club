@@ -248,6 +248,7 @@ body {
     width: var(--layout-spread-width);
     @mixin flex-column;
     overflow: hidden;
+    text-align: center;
 
     img {
       width: 200%;
