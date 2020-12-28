@@ -220,6 +220,26 @@ a {
   color: inherit;
 }
 
+hgroup.attribution {
+  margin: var(--f6) 0;
+  @mixin flex-column;
+  grid-gap: var(--f-2);
+  opacity: 80%;
+
+  h1 {
+    @mixin type headline-2;
+  }
+
+  h3 {
+    @mixin type subheadline-3;
+    &::before,
+    &::after {
+      content: '—';
+      margin: 0 0.5ch;
+    }
+  }
+}
+
 body {
   & > header {
   }
@@ -289,10 +309,8 @@ body {
         object-fit: cover;
       }
 
-      hgroup {
+      hgroup.attribution {
         margin-top: var(--f0);
-        @mixin flex-column;
-        grid-gap: var(--f-2);
         opacity: 80%;
 
         h1 {
@@ -301,11 +319,6 @@ body {
 
         h3 {
           @mixin type subheadline-4;
-          &::before,
-          &::after {
-            content: '—';
-            margin: 0 0.5ch;
-          }
         }
       }
     }
@@ -327,24 +340,6 @@ body {
         img {
           width: 100%;
           height: auto;
-        }
-      }
-
-      & > hgroup {
-        margin: var(--f6) 0;
-        opacity: 80%;
-
-        h1 {
-          @mixin type headline-2;
-        }
-
-        h3 {
-          @mixin type subheadline-3;
-          &::before,
-          &::after {
-            content: '—';
-            margin: 0 0.5ch;
-          }
         }
       }
     }
