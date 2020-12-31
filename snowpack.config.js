@@ -2,6 +2,7 @@ module.exports = {
   mount: {
     dist: '/',
     'src/eleventy/layouts': '/eleventy/layouts',
+    'src/web-components/': '/web-components',
   },
   plugins: [
     '@snowpack/plugin-typescript',
@@ -9,7 +10,11 @@ module.exports = {
     [
       '@snowpack/plugin-run-script',
       {
-        cmd: 'eleventy --config=eleventy.config.js',
+        cmd: 'npx eleventy --config=eleventy.config.js',
+        watch: '$1 --watch',
+      },
+      {
+        cmd: 'npx cpx2 src/web-components dist/web-components',
         watch: '$1 --watch',
       },
     ],
