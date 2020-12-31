@@ -2,7 +2,7 @@ module.exports = {
   mount: {
     dist: '/',
     'src/eleventy/layouts': '/eleventy/layouts',
-    'src/web-components/': '/web-components',
+    'src/webcomponents/': '/webcomponents',
   },
   plugins: [
     '@snowpack/plugin-typescript',
