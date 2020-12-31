@@ -4,7 +4,7 @@ import { customElement, property, LitElement, html, css } from 'lit-element'
 export class ScopeHR extends LitElement {
   static get styles() {
     return css`
-      :root {
+      main {
         display: none;
       }
     `
