@@ -3,6 +3,10 @@ const yaml = require('js-yaml')
 module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', (contents) => yaml.safeLoad(contents))
 
+  eleventyConfig.addFilter('upgradetags', (value) =>
+    value.replace('<hr>', '<p><scope-hr></scope-hr></p>'),
+  )
+
   eleventyConfig.setTemplateFormats([
     // Templates:
     'njk',

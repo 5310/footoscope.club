@@ -16,7 +16,7 @@ layout: base/index.njk
           {% endfor %}
         </h1>
       </hgroup>
-      {{ content | safe }}
+      {{ content | upgradetags | safe }}
   </article>
   <aside class="decor"></aside>
 </main>

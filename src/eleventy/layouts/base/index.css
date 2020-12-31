@@ -166,6 +166,7 @@ article {
 
   & > * {
     width: 100%;
+    margin-bottom: 1em;
   }
 }
 
@@ -200,10 +201,6 @@ h2 {
 
 h3 {
   @mixin type headline-5;
-}
-
-p {
-  margin-bottom: 1em;
 }
 
 figcaption {
