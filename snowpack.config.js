@@ -23,6 +23,7 @@ module.exports = {
     installTypes: true,
   },
   devOptions: {
+    port: 8888,
     hmrDelay: 300,
   },
   experiments: {
