@@ -1,7 +1,7 @@
 module.exports = {
   mount: {
     dist: '/',
-    'src/eleventy/layouts': '/layouts',
+    'src/eleventy/layouts': '/eleventy/layouts',
   },
   plugins: [
     '@snowpack/plugin-typescript',
