@@ -5,7 +5,8 @@ export class ScopeHR extends LitElement {
   static get styles() {
     return css`
       main {
-        display: none;
+        opacity: 0;
+        height: 16px;
       }
     `
   }
